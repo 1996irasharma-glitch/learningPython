@@ -154,3 +154,44 @@ randint(0,79)
 
 #input function allows the end user to put whatever value they want
 name= input('What is your name? ')
+
+#list comprehensions
+mystring ='hello'
+mylist=[]
+for letter in mystring:
+    mylist.append(letter)
+    print(mylist)
+
+#there is a shorter way of doing the same thing
+mylist = [x for x in 'myword']
+print(mylist)
+#output ['m','y','w','o','r','d']
+
+#u can use this in a lot of ways
+mynum = [x for x in range(0,11)]
+print(mynum)
+#[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+mynum = [ x**2 for x in range (0,11)]
+print(mynum)
+#[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+#you can also use if statement alongside
+mylist = [x for x in range (0,11) if x%2==0]
+print(mylist)
+#[0, 2,4,6,8,10] even numbers are recieved
+
+#you can also perform complex maths
+#celcius to farehenhiet conversion
+celcius = [0,10,20,34.5]
+farahenhiet = [((9/5)*x +32) for x in celcius]
+print(farahenhiet)
+#[32.0, 50.0, 68.0, 94.1] output
+
+#using for loop for the same thing
+farahenhiet =[]
+for x in celcius:
+    farahenhiet.append(((9/5)*x +32))
+print(farahenhiet)
+#[32.0, 50.0, 68.0, 94.1]
+
