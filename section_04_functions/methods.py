@@ -142,18 +142,35 @@ print(result)
 
 
 #we need to create a game where among the three elements in a list where two are empty strings and one is 0, user needs to guess where the 0 is
-listy = ['',0,'']
-result = shuff(listy)
-# now we need to create a guessing function
+from random import shuffle
+
+def shuff(mylist):
+    shuffle(mylist)
+    return mylist
+
 def player_guess():
     guess = ''
-    while guess not in ['0','1','2']:
-        guess = input('Pick a position (0,1,2): ')
+
+    while guess not in ['0', '1', '2']:
+        guess = input("Pick a position (0,1,2): ")
+
     return int(guess)
 
-# play the game
-player_choice = player_guess()
-if result[player_choice] == 0:
-    print('Correct!')
-else:
-    print('Incorrect!')
+def check_guess(mylist, guess):
+    if mylist[guess] == '0':
+        print("Correct!")
+    else:
+        print("Wrong!")
+
+# Initial list
+listy = ['', '0', '']
+
+# Shuffle
+mixedup_list = shuff(listy)
+
+# User guess
+guess = player_guess()
+
+# Check guess
+check_guess(mixedup_list, guess)
+
